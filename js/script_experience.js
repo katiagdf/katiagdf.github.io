@@ -21,5 +21,9 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
         var marker2 = L.marker([45.9185929285806, 6.144412844362112]).addTo(map);
         marker2.bindPopup("4 Gourmet");
 
+        // ajout marqueur SOMFY
+        var marker3 = L.marker([45.928301465868564, 6.1638413383936586]).addTo(map);
+        marker3.bindPopup("SOMFY");
+
     });
 
