@@ -194,18 +194,21 @@ p4 {
 /* Style pour le popover de l'entreprise les 4 gourmets */
 .class-popover-gourmets {
     background-color: #ffebcc; /* Couleur de fond */
-    color: #d35400; /* Texte */
-    border: 2px solid #d35400; /* Bordure */
+    color: #503b3b; /* Texte */
   }
   
   /* Style pour le popover de l’entreprise lesayec */
   .class-popover-sayec {
     background-color: #fbffcc;
-    color: #ffee00;
-    border: 2px solid #ffee00;
+    color: #000000;
+  }
+  .class-popover-somfy {
+    background-color: #f7bc63;
+    color: #070172;
   }
   
   /* Personnalisation du titre du popover */
+  .class-popover-somfy .popover-header,
   .class-popover-sayec .popover-header,
   .class-popover-gourmets .popover-header {
     font-weight: bold;
@@ -213,13 +216,18 @@ p4 {
   }
   
   .btn-sayec {
-    background-color: #ffea00;
+    background-color: #ebd702;
     color: #ffffff;
   }
 
   .btn-gourmets {
-    background-color: #ffebcc;
-    color: #d35400;
+    background-color: #bfbfbf;
+    color: #503b3b;
+    }
+
+  .btn-somfy {
+    background-color: #ff9100;
+    color: #070172;
     }
 
 
