@@ -109,6 +109,8 @@ h1, h2, h3 {
 }
 
 /* ---- Barre de Navigation ---- */
+
+/* ---- Barre de Navigation ---- */
 .custom-nav {
     display: flex;
     justify-content: space-between;
@@ -120,6 +122,12 @@ h1, h2, h3 {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-nav {
+        padding: 15px 20px;
+    }
 }
 
 .nav-logo {

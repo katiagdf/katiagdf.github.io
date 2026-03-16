@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="images/KG.png">
+    <link rel="icon" type="image/png" href="./images/KG.png">
+    
     <meta property="og:title" content="Portfolio - Katia GOASDUF | Cheffe de Projet IT">
     <meta property="og:description" content="Découvrez mon parcours, mes projets et mon expertise en gestion de projet IT, Data et Industrie 4.0. À la recherche d'une alternance pour Septembre 2025 !">
-    <meta property="og:image" content="images/apercu.jpg">
+    <meta property="og:image" content="./images/apercu.jpg">
     <meta property="og:type" content="website">
     <meta name="author" content="Katia Goasduf">
 </head>
@@ -21,32 +22,58 @@
 <body>
 
     <nav class="custom-nav animate__animated animate__fadeInDown">
-        <a href="index.html" class="nav-logo">KG.</a>
-        <div class="d-flex gap-2 gap-md-4 align-items-center">
-            <a href="html/experience.html" class="nav-link-custom d-none d-md-inline">Expériences</a>
-            <a href="html/formation.html" class="nav-link-custom d-none d-md-inline">Formations & Projets</a>
-            <a href="html/contact.html" class="nav-link-custom d-none d-md-inline">Contact</a>
+        <a href="index.html" class="nav-logo text-decoration-none">KG.</a>
+        
+        <div class="d-none d-md-flex gap-4 align-items-center">
+            <a href="html/experience.html" class="nav-link-custom">Expériences</a>
+            <a href="html/formation.html" class="nav-link-custom">Formations & Projets</a>
+            <a href="html/contact.html" class="nav-link-custom">Contact</a>
             
-            <a href="./images/GOASDUF_alternance.pdf" download="CV_Katia_Goasduf_Alternance_IT.pdf" class="btn-custom py-2 px-3 m-0 btn-cv-download" style="font-size: 0.9rem;">                <i class="fas fa-file-pdf me-2"></i>CV
+            <a href="./images/GOASDUF_alternance.pdf" download="CV_Katia_Goasduf_Alternance_IT.pdf" class="btn-custom py-2 px-3 m-0 btn-cv-download" style="font-size: 0.9rem;">
+                <i class="fas fa-file-pdf me-2"></i>CV
             </a>
             <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" class="text-primary fs-4 ms-2 hover-scale">
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
+
+        <button class="btn d-md-none text-primary fs-2 p-0 shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
+
+    <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="mobileMenu" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" style="color: #0056b3;">Menu</h5>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column gap-3 text-center mt-2">
+            <a href="html/experience.html" class="nav-link-custom text-decoration-none text-dark fw-medium">Expériences</a>
+            <a href="html/formation.html" class="nav-link-custom text-decoration-none text-dark fw-medium">Formations & Projets</a>
+            <a href="html/contact.html" class="nav-link-custom text-decoration-none text-dark fw-medium">Contact</a>
+            
+            <div class="mt-auto mb-2">
+                <a href="./images/GOASDUF_alternance.pdf" download="CV_Katia_Goasduf_Alternance_IT.pdf" class="btn-custom d-block w-100 py-2 mb-3 btn-cv-download text-decoration-none">
+                    <i class="fas fa-file-pdf me-2"></i>Télécharger CV
+                </a>
+                <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" style="color: #0077b5; font-size: 2rem;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="container mt-5">
         <div class="glass-panel animate__animated animate__zoomIn">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-3 text-center">
-                    <img src="images/pdp.jpg" alt="Katia Goasduf" class="profile-img mb-3 mb-md-0">
+                    <img src="./images/pdp.jpg" alt="Katia Goasduf" class="profile-img mb-3 mb-md-0">
                 </div>
                 <div class="col-md-9">
-                    <h1 id="header">Bienvenue sur mon portfolio !</h1>
-                    <h3 class="text-muted fs-5 mb-3">Katia GOASDUF - Gestion Projet Informatique</h3>
+                    <h1 id="header" class="fw-bold mb-2" style="color: #0056b3; font-size: clamp(1.8rem, 4vw, 2.5rem);">Bienvenue sur mon portfolio !</h1>
+                    <h2 class="text-muted fs-6 mb-3">Katia GOASDUF - Gestion Projet Informatique</h2>
                     <p class="lead">
                         Passionnée par les nouvelles technologies et la gestion de projets.
-                    
                     </p>
                     <p>
                         Forte d'un esprit d'analyse et d'un excellent relationnel, j'aime structurer l'information, résoudre des problèmes complexes et guider les équipes vers l'atteinte de leurs objectifs.
@@ -54,7 +81,8 @@
                 </div>
             </div>
         </div>
-<div class="text-center mt-5 mb-4 animate__animated animate__fadeInUp">
+
+        <div class="text-center mt-5 mb-4 animate__animated animate__fadeInUp">
             <h2 class="section-title fs-3">Mon Expertise</h2>
             <p class="text-muted small"><i class="fas fa-hand-pointer me-1"></i>Passez la souris sur les cartes pour découvrir mes outils</p>
         </div>
@@ -164,13 +192,13 @@
         </div>
 
         <div class="text-center mb-5 animate__animated animate__pulse animate__infinite animate__slower">
-            <a href="html/experience.html" class="btn-custom btn-lg shadow-sm"><i class="fas fa-route me-2"></i>Explorer mon parcours</a>
+            <a href="html/experience.html" class="btn-custom btn-lg shadow-sm text-decoration-none"><i class="fas fa-route me-2"></i>Explorer mon parcours</a>
         </div>
     </div>
 
-<footer class="custom-footer">
+    <footer class="custom-footer">
         <div class="container">
-            <p>© 2026 Katia Goasduf. Conçu avec <i class="fas fa-heart text-danger"></i> </p>
+            <p>© 2026 Katia Goasduf. Conçu avec <i class="fas fa-heart text-danger"></i></p>
             <div class="footer-links">
                 <a href="mailto:katia.goasduf@icloud.com" title="M'envoyer un email"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" title="Mon LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -182,23 +210,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        // Script pour les cartes 3D sur mobile
         document.querySelectorAll('.flip-card').forEach(card => {
             card.addEventListener('click', function() {
-                // Ajoute ou enlève la classe 'flipped' à chaque clic
                 this.classList.toggle('flipped');
             });
         });
-    </script>
-    <script>
+
+        // Script pour le bouton CV
         document.querySelectorAll('.btn-cv-download').forEach(button => {
             button.addEventListener('click', function(e) {
-                // On sauvegarde le contenu original du bouton
                 const originalContent = this.innerHTML;
-                
-                // On change le texte et l'icône
                 this.innerHTML = '<i class="fas fa-check me-2"></i>Téléchargé !';
-                
-                // On le remet à la normale après 3 secondes (3000 millisecondes)
                 setTimeout(() => {
                     this.innerHTML = originalContent;
                 }, 3000);
