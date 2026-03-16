@@ -27,8 +27,7 @@
             <a href="html/formation.html" class="nav-link-custom d-none d-md-inline">Formations & Projets</a>
             <a href="html/contact.html" class="nav-link-custom d-none d-md-inline">Contact</a>
             
-            <a href="images/GOASDUF_alternance.pdf" target="_blank" class="btn-custom py-2 px-3 m-0" style="font-size: 0.9rem;">
-                <i class="fas fa-file-pdf me-2"></i>CV
+            <a href="./images/GOASDUF_alternance.pdf" download="CV_Katia_Goasduf_Alternance_IT.pdf" class="btn-custom py-2 px-3 m-0 btn-cv-download" style="font-size: 0.9rem;">                <i class="fas fa-file-pdf me-2"></i>CV
             </a>
             <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" class="text-primary fs-4 ms-2 hover-scale">
                 <i class="fab fa-linkedin"></i>
@@ -187,6 +186,22 @@
             card.addEventListener('click', function() {
                 // Ajoute ou enlève la classe 'flipped' à chaque clic
                 this.classList.toggle('flipped');
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.btn-cv-download').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // On sauvegarde le contenu original du bouton
+                const originalContent = this.innerHTML;
+                
+                // On change le texte et l'icône
+                this.innerHTML = '<i class="fas fa-check me-2"></i>Téléchargé !';
+                
+                // On le remet à la normale après 3 secondes (3000 millisecondes)
+                setTimeout(() => {
+                    this.innerHTML = originalContent;
+                }, 3000);
             });
         });
     </script>
