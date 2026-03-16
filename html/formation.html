@@ -3,97 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation</title>
+    <title>Formations & Projets - Katia GOASDUF</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fichier CSS personnalisé -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/vis-timeline.min.js"></script>
-    <link href="https://unpkg.com/vis-timeline/styles/vis-timeline-graph2d.min.css" rel="stylesheet">
-    
-    
 </head>
 <body>
 
-</head>
-<body>
-    <div class="container my-5">
-        <h2>Formations</h2>
+    <nav class="custom-nav animate__animated animate__fadeInDown">
+        <a href="../index.html" class="nav-logo">KG.</a>
+        
+        <div class="d-flex gap-2 gap-md-4 align-items-center">
+            <a href="experience.html" class="nav-link-custom d-none d-md-inline">Expériences</a>
+            <a href="formation.html" class="nav-link-custom d-none d-md-inline" style="color: #0056b3; font-weight: bold;">Formations & Projets</a>
+            <a href="contact.html" class="nav-link-custom d-none d-md-inline">Contact</a>
+            
+            <a href="../images/GOASDUF_alternance.pdf" target="_blank" class="btn-custom py-2 px-3 m-0" style="font-size: 0.9rem;">
+                <i class="fas fa-file-pdf me-2"></i>CV
+            </a>
+            <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" class="text-primary fs-4 ms-2 hover-scale">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </nav>
 
-        <!-- Frise chronologique -->
+    <div class="container mt-4">
+        
+        <h1 class="section-title animate__animated animate__fadeInDown">Parcours Académique</h1>
+        
+        <div class="horizontal-timeline animate__animated animate__fadeInUp">
+            
+            <div class="timeline-step">
+                <div class="step-date">2022</div>
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title">Baccalauréat Général (NSI)</div>
+                    <div class="step-location">Mention Bien</div>
+                </div>
+            </div>
 
-        <div id="timeline" style="height: 200px;"></div>
-    </div>
+            <div class="timeline-step">
+                <div class="step-date">2022 - 2025</div>
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title">Licence Info & Gestion Indus.</div>
+                    <div class="step-location">IAE Annecy</div>
+                </div>
+            </div>
 
-    
+            <div class="timeline-step">
+                <div class="step-date">Semestre 5</div>
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title">Erasmus+ Engineering IT</div>
+                    <div class="step-location">Savonia UAS, Finlande</div>
+                </div>
+            </div>
 
-    <!-- Cartes de projets -->
-    <div class="container">
-        <h2 class="text-center">Projets réalisés</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4"> 
+            <div class="timeline-step">
+                <div class="step-date"><i class="fas fa-rocket text-primary me-1"></i>Sept. 2025</div>
+                <div class="step-dot"></div>
+                <div class="step-content border-primary" style="border-width: 2px;">
+                    <div class="step-title text-primary fw-bold">Master SI & Innovation</div>
+                    <div class="step-location">IAE Savoie Mont Blanc</div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="section-title mt-5 animate__animated animate__fadeInUp">Projets Réalisés</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 animate__animated animate__fadeInUp animate__delay-1s mb-5">
+            
             <div class="col">
-                <div class="card h-100">
-                    <img src="../images/smartwatch.jpg" class="card-img-top" alt="Smart Watch">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
                     <div class="card-body">
-                        <h5 class="card-title">Smart Watch</h5>
-                        <p4 class="card-text">Création de code pour une montre connectée.</p4>
-                        <!-- Bouton pour voir -->
-                        <a href="https://github.com/vincentbui21/IT-Project-1-Smartwatch" target="_blank" class="btn btn-primary">
-                            Voir
-                        </a>
+                        <span class="badge bg-primary mb-2">Data Science & R</span>
+                        <h5 class="card-title fw-bold">Analyse Data : Le phénomène de l'Asile (OCDE)</h5>
+                        <p class="card-text text-muted small">
+                            Modélisation économétrique, clustering (K-Means/CAH) et analyse de composants principaux (ACP) sur R pour identifier les déterminants socio-économiques des flux migratoires en 2023.
+                        </p>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Réalisé en 2024</small>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <small class="text-primary fw-bold"><i class="fas fa-chart-line me-1"></i> R, Stats, DataViz</small>
                     </div>
                 </div>
             </div>
+
             <div class="col">
-                <div class="card h-100">
-                    <img src="../images/projet.jpg" class="card-img-top" alt="Projet INGI">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
                     <div class="card-body">
-                        <h5 class="card-title">Projet INGI</h5>
-                        <p4 class="card-text">simulation d'une chaîne de production</p4>
+                        <span class="badge bg-success mb-2">Industrie 4.0</span>
+                        <h5 class="card-title fw-bold">Déploiement d'un SIP</h5>
+                        <p class="card-text text-muted small">
+                            Mise en place théorique d’un Système d’Indicateurs de Performance (SIP) : Intégration de capteurs IoT, système MES et algorithmes de maintenance prédictive.
+                        </p>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">En cours de réalisation</small>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <small class="text-success fw-bold"><i class="fas fa-cogs me-1"></i> IoT, MES, KPIs</small>
                     </div>
                 </div>
             </div>
+
             <div class="col">
-                <div class="card h-100">
-                    <img src="../images/uix.png" class="card-img-top" alt="Logiciel ">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
                     <div class="card-body">
-                        <h5 class="card-title">Application type uber eat</h5>
-                        <p4 class="card-text">Utilisation de flet (python) pour la création de cette application pour commander de la  nourriture</p4>
-                    <!--button pour voir -->
-                    <a href="https://github.com/nereasalamero/UIProgramming" target="_blank" class="btn btn-primary">
-                        Voir
-                    </a>
+                        <span class="badge bg-warning text-dark mb-2">ERP & Processus</span>
+                        <h5 class="card-title fw-bold">Serious Game : Gestion de Production</h5>
+                        <p class="card-text text-muted small">
+                            Gestion complète de la production et de la chaîne logistique d'une usine via <strong>SAP Fiori</strong>. Suivi des stocks, conversion des ordres et capacité en temps réel.
+                        </p>
                     </div>
-                    
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Réalisé en 2024</small>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <small class="text-warning text-dark fw-bold"><i class="fas fa-project-diagram me-1"></i> SAP, Supply Chain</small>
                     </div>
                 </div>
             </div>
+
+            <div class="col">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Management & Leadership</span>
+                        <h5 class="card-title fw-bold">Serious Game : Situations Managériales</h5>
+                        <p class="card-text text-muted small">
+                            Simulation virtuelle interactive reproduisant des conditions réelles de management d'équipe. Entraînement au <strong>management à distance</strong>, à la <strong>gestion des conflits</strong>, et à la priorisation.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <small class="text-danger fw-bold"><i class="fas fa-users me-1"></i> Soft Skills, Feedback</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
+                    <div class="card-body">
+                        <span class="badge bg-info text-dark mb-2">Développement</span>
+                        <h5 class="card-title fw-bold">Application type Uber Eats</h5>
+                        <p class="card-text text-muted small">
+                            Développement d'une interface de commande de nourriture en utilisant le framework Flet sous Python. Travail sur l'expérience utilisateur (UI/UX).
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <a href="https://github.com/nereasalamero/UIProgramming" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github me-1"></i> Voir le code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 glass-panel p-0 overflow-hidden">
+                    <div class="card-body">
+                        <span class="badge bg-info text-dark mb-2">Développement</span>
+                        <h5 class="card-title fw-bold">Interface Smartwatch</h5>
+                        <p class="card-text text-muted small">
+                            Création et programmation de l'interface et du code embarqué pour un prototype de montre connectée.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-3 text-center">
+                        <a href="https://github.com/vincentbui21/IT-Project-1-Smartwatch" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github me-1"></i> Voir le code</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-<div style="text-align: center; margin-top: 50px;">
-    <!-- Bouton pour retourner à l'accueil -->
-    <button1 onclick="window.location.href='../index.html'">Retour à l'accueil</button1>
-    <!-- Bouton pour aller à la page d'expérience -->
-    <button1 onclick="window.location.href='experience.html'">Expérience</button1>
-</div>
-
-    <!-- Espace en bas de page -->
-    <div style="height: 50px;"></div>
-
-    <!-- Scripts nécessaires -->
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/formation.js"></script>
-    
-
 
 </body>
 </html>

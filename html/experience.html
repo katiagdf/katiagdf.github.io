@@ -3,147 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expérience</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="../js/leaflet.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
-
-    <style>
-      #map {
-          height: 500px;
-          width: 100%;
-          border-radius: 0; /* Suppression des cercles */
-      }
-  </style>
-
-
+    <title>Mes Expériences - Katia GOASDUF</title>
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .experience-card {
+            border-left: 4px solid #7ab3d6;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        /* Petit badge "En cours" qui pulse */
+        .pulse-badge {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(122, 179, 214, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(122, 179, 214, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(122, 179, 214, 0); }
+        }
+        .achievement-box {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-left: 3px solid #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Liste des Entreprises</h1>
-    <table class="table table-hover">
-      <thead>
-      
-      <tr>
-        <tr>
-          <th>Localisation</th>
-          <th>Nom</th>
-          <th>Poste occupé</th>
-          <th>Durée exercée</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Annecy</td>
-          <td>
-              <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
-                    data-bs-trigger="hover focus" data-bs-content="Leadeur de la domotique">
-                  <button class="btn btn-primary" type="button" disabled>SOMFY</button>
-              </span>
-          </td>
-          <td>
-              <button type="button" class="btn btn-somfy"
-                      data-bs-toggle="popover" data-bs-placement="right"
-                      data-bs-title="mes missions"
-                      data-bs-content="- Gestion suivi projets et tableaux de bord / Microsoft project pour le service OPS - DDVC
-                      - Suivi déploiement Green, notamment sur le projet de déploiement des coupures des openspace bureau du site d’Annecy avec formalisation pour déploiement l’international
-                      - avec un de nos développeurs PowerBi concernant une demande de tableau de bord pour le Développement Durable depuis les données Aguaro de notre CMDB"
-                      data-bs-custom-class="class-popover-somfy">
-                  Stage SI infrastructure et operations
-              </button>
-          </td>
-          <td>3 mois</td>
-        <tr>
-          <td>Lorient</td>
-          <td> 
-            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
-            data-bs-trigger="hover focus" data-bs-content="Entreprise de  vente de dindonneaux d'un jour">
-              <button class="btn btn-primary" type="button" disabled>Le Sayec</button>
-            </span>
-  
-</td>
-    </button>
-    <td> 
-      <button type="button" class="btn btn-sayec"
-  data-bs-toggle="popover" data-bs-placement="right"
-  data-bs-title="mes missions"
-  data-bs-content="- Rédaction de rapports et de documents de suivi qualité 
-  - Supervision et contrôle de la conformité des produits aux normes qualité et sanitaires.
-  - Utilisation logiciel ATM, EXCEL pour la gestion et le suivi de données"
-  data-bs-custom-class="class-popover-sayec">
-Responsable qualité
-</td>
-          <td>2 mois</td>
-        </tr>
-        <tr>
-          <td>Lorient</td>
-          <td> 
-            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
-            data-bs-trigger="hover focus" data-bs-content="Entreprise de  vente de dindonneaux d'un jour">
-              <button class="btn btn-primary" type="button" disabled>Le Sayec</button>
-            </span>
-  </td>
-</button>
-<td> 
-  <button type="button" class="btn btn-sayec"
-data-bs-toggle="popover" data-bs-placement="right"
-data-bs-title="mes missions"
-data-bs-content="- Utilisation des logiciels comptables (Trace,RH,SAGE)
-- Gestion du personnel (KELIO : congés, maladie, arrêt de travail)
-- Facturation Fournisseurs/Clients
-- Contrat de Travail"
-data-bs-custom-class="class-popover-sayec">
-Assistante commerciale et administative
-</td>
-          <td>4 mois</td>
-        </tr>
-        <tr>
-          <td>Annecy</td>
-          <td> 
-            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
-            data-bs-trigger="hover focus" data-bs-content="Restaurant de cuisine italienne">
-              <button class="btn btn-primary" type="button" disabled>Les 4 Gourmets</button>
-            </span>
-</td>
-<td> 
-  <button type="button" class="btn btn-gourmets" 
-data-bs-toggle="popover" data-bs-placement="right"
-data-bs-title="mes missions"
-data-bs-content="-Servir/ desservir les plats
-- Dressage
-- Accompagnement de la clientèle - Encaissementl"
-data-bs-custom-class="class-popover-gourmets">
-Serveuse
-</td>
-          <td>4 mois temps partiel</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
-  <div class="container">
-    <h1>Carte des Entreprises</h1>
-      <div id="map"></div>
-  </div>
+    <nav class="custom-nav animate__animated animate__fadeInDown">
+        <a href="../index.html" class="nav-logo">KG.</a>
+        
+        <div class="d-flex gap-2 gap-md-4 align-items-center">
+            <a href="experience.html" class="nav-link-custom d-none d-md-inline" style="color: #0056b3; font-weight: bold;">Expériences</a>
+            <a href="formation.html" class="nav-link-custom d-none d-md-inline">Formations & Projets</a>
+            <a href="contact.html" class="nav-link-custom d-none d-md-inline">Contact</a>
+            
+            <a href="../images/GOASDUF_alternance.pdf" target="_blank" class="btn-custom py-2 px-3 m-0" style="font-size: 0.9rem;">
+                <i class="fas fa-file-pdf me-2"></i>CV
+            </a>
+            <a href="https://www.linkedin.com/in/katia-goasduf/" target="_blank" class="text-primary fs-4 ms-2 hover-scale">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </nav>
 
-  <!--bouton de fin de page-->
-  <div style="text-align: center; margin-top: 50px;">   
+    <div class="container mt-4">
+        <h1 class="section-title animate__animated animate__fadeInDown">Mon Parcours Professionnel</h1>
 
-    <button1 onclick="window.location.href='../index.html'">Retour Profil</button1> <!-- Création d'un bouton lien vers expériences  -->
-    <button1 onclick="window.location.href='formation.html'">Formations</button1> <!-- Création d'un bouton lien vers formations -->
+        <div class="row mt-4">
+            <div class="col-lg-7 animate__animated animate__fadeInLeft">
+                
+                <div class="glass-panel experience-card" style="border-left-color: #0056b3; border-width: 5px;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="mb-0 fw-bold" style="color: #0056b3;"><i class="fas fa-building me-2"></i>SOMFY Group</h4>
+                        <span class="badge bg-primary rounded-pill pulse-badge">Aujourd'hui</span>
+                    </div>
+                    <h5 class="fw-bold mt-2">Alternante gestion de projet (OPS IT)</h5>
+                    <p class="text-muted mb-3"><i class="fas fa-map-marker-alt me-1"></i> Annecy, France / Déplacements Internationaux</p>
+                    
+                    <p class="small mb-2">Pilotage de projets d'infrastructure et réseau ainsi que le déploiement d'une stratégie Green IT à l'échelle du groupe.</p>
+                    
+                    <div class="achievement-box">
+                        <h6 class="fw-bold text-dark"><i class="fas fa-server me-2 text-primary"></i>Projet Haute Disponibilité (Site de Gray)</h6>
+                        <p class="small mb-0">
+                            <strong>Challenge :</strong> Refonte complète de l'infrastructure critique en 48h<br>
+                            <strong>Action :</strong> Pilotage opérationnel et interventions techniques de terrain. Coordination des experts et prestataires pour garantir la reprise de production à 5h00.<br>
+                            <strong>Impact :</strong> Succès de l'opération et introduction de la 1ère baie réfrigérée éco-responsable du groupe.
+                        </p>
+                    </div>
+
+                    <div class="achievement-box" style="border-left-color: #28a745;">
+                        <h6 class="fw-bold text-dark"><i class="fas fa-leaf me-2 text-success"></i>Leader Green IT & Déploiement International</h6>
+                        <p class="small mb-0">Déplacement sur le site de Niepołomice (<strong>Pologne</strong>) pour la standardisation du réseau et l'implémentation du Green IT. 
+                          Animation de ma première conférence internationale auprès des collaborateurs internatinaux du groupe pour engager la transition : automatisation des coupures, cycle de vie du matériel et mesure des impacts.</p>
+                    </div>
+
+                    <div class="achievement-box" style="border-left-color: #ffc107;">
+                        <h6 class="fw-bold text-dark"><i class="fas fa-users me-2 text-warning"></i>Coordination Transverse & Communication Continue</h6>
+                        <p class="small mb-0">
+                            <strong>Pilotage au quotidien :</strong> Suivi de l'avancement des projets IT et animation régulière des équipes techniques et métiers.<br>
+                            <strong>Rôle de facilitatrice :</strong> Maintien d'une communication fluide et continue entre toutes les parties prenantes pour garantir l'alignement stratégique, assurer la transparence de l'information et lever rapidement les points de blocage.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-panel experience-card" style="border-left-color: #7ab3d6;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="mb-0 text-primary"><i class="fas fa-network-wired me-2"></i>SOMFY</h4>
+                        <span class="badge bg-secondary rounded-pill">Avril 2025 - Juillet 2025</span>
+                    </div>
+                    <h5>Stage SI Infrastructure et Opérations</h5>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Annecy</p>
+                    <ul class="mb-0 text-muted small">
+                        <li>Première immersion dans la gestion de projets IT et préparation des migrations d'infrastructure.</li>
+                        <li>Participation active au déploiement initial des initiatives Green IT (coupures des open spaces).</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel experience-card" style="border-left-color: #ce82ac;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="mb-0 text-primary"><i class="fas fa-database me-2"></i>LE SAYEC</h4>
+                        <span class="badge bg-secondary rounded-pill">Juillet - Août 2024</span>
+                    </div>
+                    <h5>Responsable Qualité & Gestion de Données</h5>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Lorient</p>
+                    <ul class="mb-0 text-muted small">
+                        <li><strong>Analyse de données :</strong> Création et mise à jour de rapports qualité complexes via Excel (macros, TCD).</li>
+                        <li><strong>Contrôle de conformité :</strong> Suivi des normes sanitaires via l'utilisation poussée du logiciel de gestion ATM.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel experience-card" style="border-left-color: #5a9bc0;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="mb-0 text-primary"><i class="fas fa-folder-open me-2"></i>LE SAYEC</h4>
+                        <span class="badge bg-secondary rounded-pill">Mai - Août 2023</span>
+                    </div>
+                    <h5>Assistante Gestion Administrative</h5>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Lorient</p>
+                    <ul class="mb-0 text-muted small">
+                        <li><strong>Outils de gestion :</strong> Utilisation quotidienne de logiciels ERP/Comptables (Trace, RH, SAGE, KELIO).</li>
+                        <li><strong>Administration :</strong> Facturation, création de contrats, gestion des plannings du personnel.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 animate__animated animate__fadeInRight">
+                <div class="glass-panel position-sticky" style="top: 100px;">
+                    <h4 class="mb-3"><i class="fas fa-globe-europe me-2"></i>Mobilité Géographique</h4>
+                    <div id="map"></div>
+                    <p class="text-muted small mt-2 text-center"><i class="fas fa-info-circle me-1"></i>Cliquez sur les points pour voir les détails de mes déplacements et projets internationaux.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div style="height: 50px;"></div> <!-- Espace en bas de page -->
-
-    <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../js/script_experience.js"></script>
-
- 
-
-
 </body>
 </html>
