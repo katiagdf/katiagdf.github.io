@@ -341,8 +341,9 @@ h1, h2, h3 {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* La carte se retourne ! */
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg); /* La carte se retourne au survol OU au clic */
 }
 
 .flip-card-front, .flip-card-back {

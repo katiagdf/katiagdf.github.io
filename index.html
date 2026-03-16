@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/KG.png">
     <meta property="og:title" content="Portfolio - Katia GOASDUF | Cheffe de Projet IT">
     <meta property="og:description" content="Découvrez mon parcours, mes projets et mon expertise en gestion de projet IT, Data et Industrie 4.0. À la recherche d'une alternance pour Septembre 2025 !">
     <meta property="og:image" content="images/apercu.jpg">
@@ -169,8 +170,15 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/chart.umd.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Ajoute ou enlève la classe 'flipped' à chaque clic
+                this.classList.toggle('flipped');
+            });
+        });
+    </script>
 
 </body>
 </html>
