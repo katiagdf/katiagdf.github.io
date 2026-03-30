@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", function() {
             city: "Genève, Suisse", 
             lat: 46.2044, lng: 6.1432, 
             desc: "Site et opérations suisses" 
+        },
+        // Tu peux ajouter d'autres lieux importants pour toi ici
+        { 
+            name: "SOMFY - Nantes", 
+            city: "Nantes, France", 
+            lat: 47.276350749415755, lng: -1.5102930653123376, 
+            desc: "changement d'un switch" 
         }
     ];
 
