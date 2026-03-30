@@ -1,343 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
-/* ---- Fond animé et typographie ---- */
+/* ==========================================
+   VARIABLES & BASE
+========================================== */
+:root {
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --navy-dark: #0f172a;
+    --navy-light: #1e293b;
+    --cyan-tech: #0ea5e9;
+    --cyan-glow: rgba(14, 165, 233, 0.3);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    color: #2c3e50;
+    color: var(--text-main);
+    background-color: var(--bg-light);
     margin: 0;
     padding: 0;
-    /* Dégradé animé moderne */
-    background: linear-gradient(-45deg, #f0f4f8, #d9e2ec, #bcccdc, #9fb3c8);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* ---- Effet Verre Dépoli (Glassmorphism) ---- */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    padding: 30px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-panel:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
-}
-
-/* ---- Typographie ---- */
-h1, h2, h3 {
-    color: #0056b3;
-    font-weight: 600;
-}
-
-#header {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+/* ==========================================
+   TYPOGRAPHIE DIRECTRICE
+========================================== */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy-dark);
+    font-weight: 700;
 }
 
 .section-title {
-    font-size: 1.8em;
-    border-bottom: 3px solid #7ab3d6;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 40px;
     display: inline-block;
+    color: var(--navy-dark);
 }
 
-/* ---- Image de profil ---- */
-.profile-img {
-    border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    object-fit: cover;
-    width: 180px; 
-    height: 180px;
-    border: 4px solid white;
-    transition: transform 0.4s ease;
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--cyan-tech);
 }
 
-.profile-img:hover {
-    transform: scale(1.08) rotate(2deg);
+.tech-font {
+    font-family: 'Fira Code', monospace;
+    color: var(--cyan-tech);
+    font-size: 0.85rem;
 }
 
-/* ---- Boutons personnalisés ---- */
-.btn-custom {
-    background: linear-gradient(135deg, #7ab3d6, #5a9bc0);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(122, 179, 214, 0.4);
-    transition: all 0.3s ease;
-}
-
-.btn-custom:hover {
-    background: linear-gradient(135deg, #ce82ac, #b36690);
-    box-shadow: 0 6px 20px rgba(206, 130, 172, 0.5);
-    transform: translateY(-2px);
-    color: white;
-}
-
-/* ---- Cartes d'intérêts ---- */
-.interest-icon {
-    font-size: 40px;
-    color: #7ab3d6;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-
-.glass-panel:hover .interest-icon {
-    transform: scale(1.2) rotate(-5deg);
-    color: #ce82ac;
-}
-
-/* ---- Barre de Navigation ---- */
-
-/* ---- Barre de Navigation ---- */
+/* ==========================================
+   NAVIGATION
+========================================== */
 .custom-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 5%;
+    background: rgba(248, 250, 252, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-@media screen and (max-width: 768px) {
-    .custom-nav {
-        padding: 15px 20px;
-    }
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .nav-logo {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #0056b3;
+    color: var(--navy-dark);
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
+.nav-logo span { color: var(--cyan-tech); }
 
 .nav-link-custom {
-    color: #2c3e50;
+    color: var(--text-main);
     text-decoration: none;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.nav-link-custom:hover {
-    background: rgba(255, 255, 255, 0.5);
-    color: #0056b3;
-}
-
-.hover-scale {
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-.hover-scale:hover {
-    transform: scale(1.2);
-    color: #ce82ac !important;
-}
-
-/* ---- Pilules d'intérêts (Mignon, Pro, Aventurier) ---- */
-.mini-glass-pill {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50px;
-    padding: 10px 22px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #34495e;
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-.mini-glass-pill i {
-    color: #7ab3d6;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.mini-glass-pill:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 8px 20px rgba(31, 38, 135, 0.1);
-    color: #0056b3;
-}
-
-.mini-glass-pill:hover i {
-    transform: scale(1.2) rotate(5deg);
-    color: #ce82ac;
-}
-
-/* ---- Timeline Horizontale ---- */
-.horizontal-timeline {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin: 50px 0;
-}
-
-/* La ligne bleue de fond */
-.horizontal-timeline::before {
-    content: '';
-    position: absolute;
-    top: 37px; /* Aligné avec les points */
-    left: 5%;
-    width: 90%;
-    height: 4px;
-    background: #7ab3d6;
-    z-index: 1;
-    border-radius: 2px;
-}
-
-.timeline-step {
-    width: 23%; /* 4 étapes, donc un peu moins de 25% chacune */
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.step-date {
-    font-weight: 700;
-    color: #0056b3;
-    margin-bottom: 12px;
     font-size: 0.9rem;
-    height: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
 }
 
-/* Les points interactifs */
-.step-dot {
-    width: 20px;
-    height: 20px;
+.nav-link-custom:hover, .nav-link-custom.active {
+    color: var(--cyan-tech);
+}
+
+/* ==========================================
+   PANNEAUX CLASSIQUES (Remplacent les glass-panels)
+========================================== */
+.glass-panel {
     background: white;
-    border: 4px solid #ce82ac;
-    border-radius: 50%;
-    margin: 0 auto 20px auto;
-    transition: transform 0.3s ease, background 0.3s;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid var(--navy-dark);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
 }
 
-.timeline-step:hover .step-dot {
-    background: #ce82ac;
-    transform: scale(1.4);
-    box-shadow: 0 0 10px rgba(206, 130, 172, 0.5);
-}
-
-/* Le contenu des cartes */
-.step-content {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 15px;
-    padding: 15px 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s;
-}
-
-.timeline-step:hover .step-content {
+.glass-panel:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 8px 20px rgba(31, 38, 135, 0.1);
+    border-top-color: var(--cyan-tech);
+    box-shadow: 0 15px 35px var(--cyan-glow);
 }
 
-.step-title {
-    font-size: 0.95rem;
+/* ==========================================
+   BOUTONS ÉLÉGANTS
+========================================== */
+.btn-custom {
+    background-color: var(--navy-dark);
+    color: white;
+    border: 1px solid var(--navy-dark);
+    padding: 12px 30px;
+    border-radius: 6px;
     font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 10px;
 }
 
-.step-location {
-    font-size: 0.8rem;
-    color: #5a9bc0;
-    font-style: italic;
+.btn-custom:hover {
+    background-color: var(--cyan-tech);
+    border-color: var(--cyan-tech);
+    color: white;
+    box-shadow: 0 10px 20px var(--cyan-glow);
+    transform: translateY(-2px);
 }
 
-/* Mode Mobile : On repasse en vertical pour que ça reste lisible sur petit écran */
-@media screen and (max-width: 768px) {
-    .horizontal-timeline {
-        flex-direction: column;
-        margin: 20px 0;
-    }
-    .horizontal-timeline::before {
-        top: 0;
-        left: 10px;
-        width: 4px;
-        height: 100%;
-    }
-    .timeline-step {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        text-align: left;
-        margin-bottom: 25px;
-    }
-    .step-date {
-        margin-bottom: 0;
-        margin-top: -2px;
-        width: 100px;
-        flex-shrink: 0;
-    }
-    .step-dot {
-        margin: 0 20px 0 -4px;
-        flex-shrink: 0;
-    }
-    .step-content {
-        margin-top: -10px;
-        flex-grow: 1;
-    }
-} /* FIN DU MODE MOBILE ICI ! */
-
-
-/* ---- Compétences : Cartes 3D (Flip Cards) ---- */
-.skills-container {
-    margin-top: 40px;
-    margin-bottom: 50px;
+/* ==========================================
+   IMAGE DE PROFIL
+========================================== */
+.profile-img {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+    object-fit: cover;
+    width: 250px; 
+    border: 8px solid white;
+    transition: transform 0.4s ease;
 }
+
+.profile-img:hover {
+    transform: scale(1.02);
+}
+
+/* ==========================================
+   CARTES D'EXPERTISE (Flip Cards modifiées)
+========================================== */
+.skills-container { margin-top: 40px; margin-bottom: 50px; }
 
 .flip-card {
     background-color: transparent;
-    height: 200px; /* Cartes plus petites et carrées */
+    height: 220px;
     perspective: 1000px;
     margin-bottom: 20px;
-    /* Petite animation de flottaison continue */
-    animation: float 6s ease-in-out infinite; 
-}
-
-/* Désynchroniser la flottaison pour plus de naturel */
-.col-md-3:nth-child(2) .flip-card { animation-delay: 1s; }
-.col-md-3:nth-child(3) .flip-card { animation-delay: 2s; }
-.col-md-3:nth-child(4) .flip-card { animation-delay: 3s; }
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
 }
 
 .flip-card-inner {
@@ -345,13 +174,13 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); /* Animation fluide */
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner,
 .flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg); /* La carte se retourne au survol OU au clic */
+    transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
@@ -359,81 +188,158 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 20px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    border: 1px solid var(--navy-light);
+}
+
+.flip-card-front {
+    background: var(--navy-dark);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .flip-card-front i {
-    font-size: 3.5rem; /* Très grosse icône */
+    font-size: 3rem;
+    color: var(--cyan-tech);
     margin-bottom: 15px;
-    background: linear-gradient(135deg, #0056b3, #ce82ac);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px var(--cyan-glow));
 }
 
 .flip-card-front h4 {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: #2c3e50;
+    color: white;
     margin: 0;
 }
 
 .flip-card-back {
     transform: rotateY(180deg);
-    background: rgba(255, 255, 255, 0.7);
+    background: white;
+    border: 1px solid var(--cyan-tech);
+    box-shadow: 0 10px 30px var(--cyan-glow);
 }
 
 .flip-card-back p {
     margin: 4px 0;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.9rem;
-    color: #0056b3;
-    border-bottom: 1px dashed rgba(0,0,0,0.1);
-    padding-bottom: 2px;
+    color: var(--navy-dark);
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
     width: 90%;
 }
 .flip-card-back p:last-child { border-bottom: none; }
 
-/* Mini-pilules pour les langues (Très compact) */
-.lang-mini-pill {
+/* ==========================================
+   MINI PILULES (Langues / Compétences)
+========================================== */
+.mini-glass-pill, .lang-mini-pill {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    padding: 8px 18px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    border: 1px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    margin: 5px;
-    transition: transform 0.3s;
-}
-.lang-mini-pill:hover { transform: scale(1.1); }
-
-/* ---- Footer (Pied de page) ---- */
-.custom-footer {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 30px 0 20px 0;
-    margin-top: auto; /* Pousse le footer tout en bas */
-    text-align: center;
-    color: #2c3e50;
-}
-
-.custom-footer p {
-    margin-bottom: 10px;
+    font-size: 0.9rem;
     font-weight: 500;
+    color: var(--navy-dark);
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.mini-glass-pill i { color: var(--cyan-tech); }
+
+.mini-glass-pill:hover, .lang-mini-pill:hover {
+    border-color: var(--cyan-tech);
+    box-shadow: 0 5px 15px var(--cyan-glow);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   TIMELINE HORIZONTALE ORIGINALE
+========================================== */
+.horizontal-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 50px 0;
+}
+
+.horizontal-timeline::before {
+    content: '';
+    position: absolute;
+    top: 37px;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: #e2e8f0;
+    z-index: 1;
+}
+
+.timeline-step { width: 23%; position: relative; z-index: 2; text-align: center; }
+
+.step-date {
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    color: var(--cyan-tech);
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+
+.step-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--bg-light);
+    border: 3px solid var(--navy-dark);
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+.timeline-step:hover .step-dot {
+    background: var(--cyan-tech);
+    border-color: var(--cyan-tech);
+    box-shadow: 0 0 15px var(--cyan-glow);
+    transform: scale(1.3);
+}
+
+.step-content {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid var(--navy-dark);
+    border-radius: 8px;
+    padding: 15px 10px;
+    transition: all 0.3s;
+}
+
+.timeline-step:hover .step-content {
+    transform: translateY(-5px);
+    border-top-color: var(--cyan-tech);
+    box-shadow: 0 10px 20px var(--cyan-glow);
+}
+
+.step-title {
     font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+.custom-footer {
+    background-color: var(--navy-dark);
+    color: #cbd5e1;
+    padding: 40px 0 20px;
+    margin-top: auto;
+    text-align: center;
 }
 
 .footer-links {
@@ -444,12 +350,12 @@ h1, h2, h3 {
 }
 
 .footer-links a {
-    color: #5a9bc0;
+    color: white;
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ce82ac;
-    transform: translateY(-3px);
+    color: var(--cyan-tech);
+    filter: drop-shadow(0 0 8px var(--cyan-glow));
 }
